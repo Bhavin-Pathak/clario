@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# 📝 Clario: Text Summarization App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sleek and modern text summarization application built with React, powered by the OpenAI API, designed to transform lengthy text into concise, meaningful summaries with ease.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 📋 **Text Summarization**: Generate concise summaries of any text using AI
+- 🔑 **API Key Configuration**: Securely input and save your OpenAI API key
+- 📊 **Text Analytics**: View word and character counts for input and summary
+- 🎨 **Animated Summaries**: Smooth text animation for an engaging experience
+- 📱 **Responsive Design**: Optimized for desktop, tablet, and mobile
+- ⚡ **Fast Performance**: Lightweight and efficient
+- 🔒 **Secure Storage**: API key persistence using localStorage (development mode)
+- 🚀 **Modern UI**: Built with Tailwind CSS for a polished look
 
-### `npm start`
+## 🚀 Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Live Demo](https://your-demo-link.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Prerequisites
 
-### `npm test`
+Before you begin, ensure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (version 14.0 or higher)
+- **npm** (version 6.0 or higher) or **yarn**
+- **Git**
+- **OpenAI API Key** (signup required at [OpenAI](https://openai.com))
 
-### `npm run build`
+## 🛠️ Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/Bhavin-Pathak/clario.git
+cd clario
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Install Dependencies
 
-### `npm run eject`
+Using npm:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Or using yarn:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+yarn install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔧 Environment Setup
 
-## Learn More
+### 1. Get OpenAI API Key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Visit [OpenAI](https://openai.com)
+2. Sign up or log in to your account
+3. Generate a new API key
+4. Copy your API key
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> **Note**: For production, it's recommended to use a backend server to securely handle the API key. The current setup uses localStorage for development purposes.
 
-### Code Splitting
+## 🏃‍♂️ Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Development Mode
 
-### Analyzing the Bundle Size
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Open [http://localhost:3000](http://localhost:3000) to view Clario in your browser.
 
-### Making a Progressive Web App
+## 🌐 API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### OpenAI API Integration
 
-### Advanced Configuration
+Clario uses the OpenAI API to perform text summarization. The API key is entered by the user and stored in localStorage for development.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### API Call Example
 
-### Deployment
+The app makes the following request to summarize text:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```javascript
+const completion = await openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [
+    {
+      role: "system",
+      content:
+        "You are a professional text summarizer. Create concise, well-structured summaries that capture the main points and key information from the given text. Keep summaries significantly shorter than the original while maintaining accuracy and clarity.",
+    },
+    {
+      role: "user",
+      content: `Please summarize the following text in 2-3 concise paragraphs, focusing on the main points and key information:\n\n${text}`,
+    },
+  ],
+  max_tokens: Math.min(500, Math.floor(text.length / 4)),
+  temperature: 0.3,
+});
+```
 
-### `npm run build` fails to minify
+### Utility Methods
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+// Summarize text using OpenAI API
+await summarizeText(inputText, apiKey);
+```
+
+## 🛠️ Technologies Used
+
+**Frontend:**
+
+- React 18
+- JavaScript (ES6+)
+- Tailwind CSS
+- HTML5
+
+**APIs:**
+
+- OpenAI API (gpt-4o-mini model)
+
+**Tools:**
+
+- Create React App
+- npm/yarn
+- Git
+
+## 🌟 Additional Features
+
+- **Input Validation**: Ensures text and API key are provided before processing
+- **Error Handling**: Displays user-friendly error messages for API failures
+- **Success Feedback**: Confirms successful API key saving and summarization
+- **Text Length Reduction**: Shows the percentage by which the summary is shorter
+
+## 📞 Support
+
+If you have any questions or need help, please:
+
+- Check the [Issues](https://github.com/Bhavin-Pathak/clario/issues) page
+- Create a new issue if your problem isn't already reported
+- Contact: your-email@example.com
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Contributing Guidelines
+
+- Follow React best practices
+- Use functional components with hooks
+- Write clean, commented code
+- Add tests for new features
+- Update documentation
+
+---
+
+⭐ **If you found this project helpful, please give it a star!**
