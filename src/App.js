@@ -7,6 +7,7 @@ import Button from "./components/Button";
 import ErrorPopup from "./components/ErrorPopup";
 import SuccessPopup from "./components/SuccessPopup";
 import ApiKeySection from "./components/ApiKeySection";
+import Footer from "./components/Footer";
 import { summarizeText } from "./utils/apiUtils";
 import { ERROR_MESSAGES } from "./utils/errorMessages";
 
@@ -92,19 +93,19 @@ const App = () => {
             Clario 💻
           </h1>
           <p className="text-white/80 text-lg">
-            Transform long text into concise summaries with AI
+            Transform long text into concise summaries with Openai
           </p>
         </div>
 
         <div className="space-y-6">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
             <h2 className="text-xl font-semibold text-white mb-4">
-              📝 Enter Your Text
+              Enter Your Text For Summarization
             </h2>
             <TextInput
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              placeholder="Paste your text here to get a summary..."
+              placeholder="Type and paste your text here to get a summary..."
               isTextarea
               disabled={!isApiKeyLocked}
             />
@@ -130,7 +131,7 @@ const App = () => {
           >
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
               <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                📋 Summary
+                Summarization Result
                 {summary && !isLoading && (
                   <span className="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">
                     Generated
@@ -165,7 +166,7 @@ const App = () => {
               ) : null}
             </div>
           </div>
-
+          {/* API Component */}
           <ApiKeySection
             apiKey={apiKey}
             setApiKey={setApiKey}
@@ -174,12 +175,8 @@ const App = () => {
             onReset={handleReset}
           />
         </div>
-
-        <div className="text-center mt-12 pb-8">
-          <p className="text-white/60 text-sm">
-            Built with React & Tailwind CSS • Powered by AI
-          </p>
-        </div>
+        {/* Footer Component */}
+        <Footer />
       </div>
 
       <ErrorPopup message={errorMessage} onClose={() => setErrorMessage("")} />
