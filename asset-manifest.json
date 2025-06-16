@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/clario/static/css/main.39bb4d5f.css",
+    "main.js": "/clario/static/js/main.93086a58.js",
+    "static/js/453.1a3ce12f.chunk.js": "/clario/static/js/453.1a3ce12f.chunk.js",
+    "index.html": "/clario/index.html",
+    "main.39bb4d5f.css.map": "/clario/static/css/main.39bb4d5f.css.map",
+    "main.93086a58.js.map": "/clario/static/js/main.93086a58.js.map",
+    "453.1a3ce12f.chunk.js.map": "/clario/static/js/453.1a3ce12f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39bb4d5f.css",
+    "static/js/main.93086a58.js"
+  ]
+}
