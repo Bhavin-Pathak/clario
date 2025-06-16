@@ -1,6 +1,8 @@
 # 📝 Clario: Text Summarization App
 
-A sleek and modern text summarization application built with React, powered by the OpenAI API, designed to transform lengthy text into concise, meaningful summaries with ease.
+**Clario** is a sleek and modern text summarization application built with React, powered by the OpenAI API, designed to transform lengthy text into concise, meaningful summaries with ease.
+
+![Clario App Screenshot](preview/image.png)
 
 ## ✨ Features
 
@@ -13,10 +15,6 @@ A sleek and modern text summarization application built with React, powered by t
 - 🔒 **Secure Storage**: API key persistence using localStorage (development mode)
 - 🚀 **Modern UI**: Built with Tailwind CSS for a polished look
 
-## 🚀 Demo
-
-[Live Demo](https://your-demo-link.com)
-
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -25,6 +23,18 @@ Before you begin, ensure you have the following installed:
 - **npm** (version 6.0 or higher) or **yarn**
 - **Git**
 - **OpenAI API Key** (signup required at [OpenAI](https://openai.com))
+
+## 🛠️ Technologies Used
+
+**Frontend:**
+
+- React 18
+- JavaScript (ES6+)
+- Tailwind CSS
+
+**APIs:**
+
+- OpenAI API (gpt-4o-mini model)
 
 ## 🛠️ Installation
 
@@ -41,12 +51,6 @@ Using npm:
 
 ```bash
 npm install
-```
-
-Or using yarn:
-
-```bash
-yarn install
 ```
 
 ## 🔧 Environment Setup
@@ -106,25 +110,6 @@ const completion = await openai.chat.completions.create({
 await summarizeText(inputText, apiKey);
 ```
 
-## 🛠️ Technologies Used
-
-**Frontend:**
-
-- React 18
-- JavaScript (ES6+)
-- Tailwind CSS
-- HTML5
-
-**APIs:**
-
-- OpenAI API (gpt-4o-mini model)
-
-**Tools:**
-
-- Create React App
-- npm/yarn
-- Git
-
 ## 🌟 Additional Features
 
 - **Input Validation**: Ensures text and API key are provided before processing
@@ -136,9 +121,9 @@ await summarizeText(inputText, apiKey);
 
 If you have any questions or need help, please:
 
-- Check the [Issues](https://github.com/Bhavin-Pathak/clario/issues) page
-- Create a new issue if your problem isn't already reported
-- Contact: your-email@example.com
+1. Check the [Issues](https://github.com/Bhavin-Pathak/clario/issues) page
+2. Create a new issue if your problem isn't already reported
+3. Contact: bhavinpathak29@gmail.com
 
 ## 📄 License
 
@@ -151,15 +136,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+6. Follow React best practices
+7. Use functional components with hooks
+8. Write clean, commented code
+9. Add tests for new features
+10. Update documentation
 
-### Contributing Guidelines
-
-- Follow React best practices
-- Use functional components with hooks
-- Write clean, commented code
-- Add tests for new features
-- Update documentation
-
----
-
-⭐ **If you found this project helpful, please give it a star!**
+## ⭐ If you found this project helpful, please give it a star!
