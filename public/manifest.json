@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Clario",
+  "name": "Clario - Your Personal Text Summary Tool",
   "icons": [
     {
       "src": "favicon.ico",
